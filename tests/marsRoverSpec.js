@@ -8,5 +8,13 @@ describe("Mars Rover", function(){
 		expect(direction).toBe('S');
 	});
 
-	it
+	it("moves forward facing north", function(){
+		var rover = new Rover(new Point(1, 2), Direction.NORTH);
+		var moves = ['F'];
+		
+		var currentPosition = rover.move(moves);
+
+		expect(currentPosition.getX()).toBe(1);
+		expect(currentPosition.getY()).toBe(3);
+	});
 });
