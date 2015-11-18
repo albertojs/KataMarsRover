@@ -17,3 +17,10 @@ function Point(x, y)
 		return y;
 	};
 }
+
+var Direction =	{
+					NORTH: 'N',
+					SOUTH: 'S',
+					EAST: 'E',
+					WEST: 'W'
+				};
