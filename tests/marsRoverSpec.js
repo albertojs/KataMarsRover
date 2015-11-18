@@ -15,18 +15,4 @@ describe("Mars Rover", function(){
 
 		expect(coordinateY).toBe(2);
 	});
-
-
-	function Rover(x, y, direction)
-	{
-		this.getX = function()
-		{
-			return x;
-		};
-
-		this.getY = function()
-		{
-			return y;
-		};
-	}
 });
