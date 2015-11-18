@@ -1,4 +1,10 @@
-function Rover(x, y, direction)
+function Rover(startingPoint, direction)
+{
+	this.currentPoint = startingPoint;
+	
+}
+
+function Point(x, y)
 {
 	this.getX = function()
 	{
