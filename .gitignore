@@ -229,3 +229,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+lib/lib/jasmine-2.3.4/boot.js
+lib/lib/jasmine-2.3.4/console.js
+lib/lib/jasmine-2.3.4/jasmine.css
+lib/SpecRunner.html
+lib/lib/jasmine-2.3.4/jasmine.js
+lib/MIT.LICENSE
+lib/lib/jasmine-2.3.4/jasmine-html.js
+lib/lib/jasmine-2.3.4/jasmine_favicon.png
