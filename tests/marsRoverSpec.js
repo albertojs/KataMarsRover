@@ -15,4 +15,12 @@ describe("Mars Rover", function(){
 
 		expect(coordinateY).toBe(2);
 	});
+
+	it("gets direction", function(){
+		var rover = new Rover(new Point(1, 2), 'S');
+
+		var direction = rover.direction;
+
+		expect(direction).toBe('S');
+	});
 });

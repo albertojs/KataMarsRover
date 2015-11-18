@@ -1,6 +1,7 @@
-function Rover(startingPoint, direction)
+function Rover(startingPoint, startingDirection)
 {
 	this.currentPoint = startingPoint;
+	this.direction = startingDirection;
 	
 }
 
