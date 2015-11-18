@@ -20,5 +20,9 @@ function Rover(startingPoint, startingDirection)
 			self.point = new Point(self.point.getX() + 1, self.point.getY());
 			return self.point;
 		}
+		if(moves[0] == 'F' && self.direction == Direction.WEST) {
+			self.point = new Point(self.point.getX() - 1, self.point.getY());
+			return self.point;
+		}
 	};
 }
