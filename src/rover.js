@@ -8,7 +8,7 @@ function Rover(startingPoint, startingDirection)
 	
 	self.move = function(movements)
 	{
-		if(movements[0] == 'F')
+		if(movements[0] == Movements.FORWARD)
 			self.point = moveForward();
 		return self.point;
 	};
