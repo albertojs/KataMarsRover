@@ -50,7 +50,7 @@ describe("Mars Rover", function(){
 			expect(currentPosition.getY()).toBe(2);
 		});
 
-		it("moves twice", function(){
+		it("twice", function(){
 			var rover = new Rover(new Point(4, 2), Direction.NORTH);
 			var movements = ["F", "F"];
 			
@@ -101,6 +101,16 @@ describe("Mars Rover", function(){
 
 			expect(currentPosition.getX()).toBe(4);
 			expect(currentPosition.getY()).toBe(3);
+		});
+
+		it("twice", function(){
+			var rover = new Rover(new Point(3, 3), Direction.NORTH);
+			var movements = ['B', 'B'];
+			
+			var currentPosition = rover.move(movements);
+
+			expect(currentPosition.getX()).toBe(3);
+			expect(currentPosition.getY()).toBe(1);
 		});
 
 	});
