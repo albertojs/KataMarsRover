@@ -8,21 +8,23 @@ function Rover(startingPoint, startingDirection)
 	
 	self.move = function(moves)
 	{
-		if(moves[0] == 'F' && self.direction == Direction.NORTH) {
-			self.point = new Point(self.point.getX(), self.point.getY() + 1);
-			return self.point;
+		if(moves[0] == 'F')
+			self.point = moveForward();
+		return self.point;
+	};
+
+	function moveForward(){
+		if(self.direction == Direction.NORTH) {
+			return new Point(self.point.getX(), self.point.getY() + 1);
 		}
-		if(moves[0] == 'F' && self.direction == Direction.SOUTH) {
-			self.point = new Point(self.point.getX(), self.point.getY() - 1);
-			return self.point;
+		if(self.direction == Direction.SOUTH) {
+			return new  Point(self.point.getX(), self.point.getY() - 1);
 		}
-		if(moves[0] == 'F' && self.direction == Direction.EAST) {
-			self.point = new Point(self.point.getX() + 1, self.point.getY());
-			return self.point;
+		if(self.direction == Direction.EAST) {
+			return new  Point(self.point.getX() + 1, self.point.getY());
 		}
-		if(moves[0] == 'F' && self.direction == Direction.WEST) {
-			self.point = new Point(self.point.getX() - 1, self.point.getY());
-			return self.point;
+		if(self.direction == Direction.WEST) {
+			return new  Point(self.point.getX() - 1, self.point.getY());
 		}
 	};
 }
