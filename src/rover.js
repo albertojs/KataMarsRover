@@ -12,6 +12,8 @@ function Rover(startingPoint, startingDirection)
 			var currentMovement = movements[i];
 			if(currentMovement == Movements.FORWARD)
 				self.point = moveForward();
+			if(currentMovement == Movements.BACKWARD)
+				self.point = moveBackward();
 		}
 		return self.point;
 	};
@@ -30,4 +32,11 @@ function Rover(startingPoint, startingDirection)
 			return new  Point(self.point.getX() - 1, self.point.getY());
 		}
 	};
+
+	function moveBackward()
+	{
+		if(self.direction == Direction.NORTH) {
+			return new Point(self.point.getX(), self.point.getY() - 1);
+		}	
+	}
 }

@@ -10,9 +10,9 @@ describe("Mars Rover", function(){
 
 	it("moves forward facing north", function(){
 		var rover = new Rover(new Point(1, 2), Direction.NORTH);
-		var moves = ['F'];
+		var movements = ['F'];
 		
-		var currentPosition = rover.move(moves);
+		var currentPosition = rover.move(movements);
 
 		expect(currentPosition.getX()).toBe(1);
 		expect(currentPosition.getY()).toBe(3);
@@ -20,9 +20,9 @@ describe("Mars Rover", function(){
 
 	it("moves forward facing south", function(){
 		var rover = new Rover(new Point(1, 2), Direction.SOUTH);
-		var moves = ['F'];
+		var movements = ['F'];
 		
-		var currentPosition = rover.move(moves);
+		var currentPosition = rover.move(movements);
 
 		expect(currentPosition.getX()).toBe(1);
 		expect(currentPosition.getY()).toBe(1);
@@ -30,9 +30,9 @@ describe("Mars Rover", function(){
 
 	it("moves forward facing east", function(){
 		var rover = new Rover(new Point(1, 2), Direction.EAST);
-		var moves = ['F'];
+		var movements = ['F'];
 		
-		var currentPosition = rover.move(moves);
+		var currentPosition = rover.move(movements);
 
 		expect(currentPosition.getX()).toBe(2);
 		expect(currentPosition.getY()).toBe(2);
@@ -40,9 +40,9 @@ describe("Mars Rover", function(){
 
 	it("moves forward facing west", function(){
 		var rover = new Rover(new Point(4, 2), Direction.WEST);
-		var moves = ['F'];
+		var movements = ['F'];
 		
-		var currentPosition = rover.move(moves);
+		var currentPosition = rover.move(movements);
 
 		expect(currentPosition.getX()).toBe(3);
 		expect(currentPosition.getY()).toBe(2);
@@ -50,11 +50,21 @@ describe("Mars Rover", function(){
 
 	it("moves forward twice", function(){
 		var rover = new Rover(new Point(4, 2), Direction.NORTH);
-		var moves = ["F", "F"];
+		var movements = ["F", "F"];
 		
-		var currentPosition = rover.move(moves);
+		var currentPosition = rover.move(movements);
 
 		expect(currentPosition.getX()).toBe(4);
 		expect(currentPosition.getY()).toBe(4);
+	});
+
+	it("moves backward facing north", function(){
+		var rover = new Rover(new Point(1, 2), Direction.NORTH);
+		var movements = ['B'];
+		
+		var currentPosition = rover.move(movements);
+
+		expect(currentPosition.getX()).toBe(1);
+		expect(currentPosition.getY()).toBe(1);
 	});
 });
