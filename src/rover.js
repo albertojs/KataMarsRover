@@ -6,9 +6,9 @@ function Rover(startingPoint, startingDirection)
 	
 	self.direction = startingDirection;
 	
-	self.move = function(moves)
+	self.move = function(movements)
 	{
-		if(moves[0] == 'F')
+		if(movements[0] == 'F')
 			self.point = moveForward();
 		return self.point;
 	};
