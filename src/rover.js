@@ -40,6 +40,9 @@ function Rover(startingPoint, startingDirection)
 		}
 		if(self.direction == Direction.SOUTH) {
 			return new Point(self.point.getX(), self.point.getY() + 1);
+		}
+		if(self.direction == Direction.EAST) {
+			return new Point(self.point.getX() - 1, self.point.getY());
 		}	
 	}
 }
