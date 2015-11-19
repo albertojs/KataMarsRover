@@ -67,4 +67,14 @@ describe("Mars Rover", function(){
 		expect(currentPosition.getX()).toBe(1);
 		expect(currentPosition.getY()).toBe(1);
 	});
+
+	it("moves backward facing south", function(){
+		var rover = new Rover(new Point(1, 2), Direction.SOUTH);
+		var movements = ['B'];
+		
+		var currentPosition = rover.move(movements);
+
+		expect(currentPosition.getX()).toBe(1);
+		expect(currentPosition.getY()).toBe(3);
+	});
 });

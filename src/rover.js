@@ -37,6 +37,9 @@ function Rover(startingPoint, startingDirection)
 	{
 		if(self.direction == Direction.NORTH) {
 			return new Point(self.point.getX(), self.point.getY() - 1);
+		}
+		if(self.direction == Direction.SOUTH) {
+			return new Point(self.point.getX(), self.point.getY() + 1);
 		}	
 	}
 }
