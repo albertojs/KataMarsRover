@@ -1,8 +1,8 @@
-function CommandFactory(movement, direction, point)
+function CommandFactory(command, direction, point)
 {
-	if(movement == Movements.FORWARD)
+	if(command == Movements.FORWARD)
 		return new ForwardCommand(direction, point);
-	if(movement == Movements.BACKWARD)
+	if(command == Movements.BACKWARD)
 		return new BackwardCommand(direction, point);
 }
 

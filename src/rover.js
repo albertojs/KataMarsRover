@@ -6,11 +6,11 @@ function Rover(startingPoint, startingDirection)
 	
 	self.direction = startingDirection;
 	
-	self.move = function(movements)
+	self.move = function(commands)
 	{
-		for(i = 0; i < movements.length; i++){
-			var currentMovement = movements[i];
-			var command = CommandFactory(currentMovement, self.direction, self.point)
+		for(i = 0; i < commands.length; i++){
+			var currentCommand = commands[i];
+			var command = CommandFactory(currentCommand, self.direction, self.point)
 			self.point = command.execute();
 		}
 		return self.point;
