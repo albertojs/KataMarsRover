@@ -64,13 +64,13 @@ describe("Mars Rover", function(){
 	describe("moves backward", function(){
 
 		it("facing north", function(){
-		var rover = new Rover(new Point(1, 2), Direction.NORTH);
-		var movements = ['B'];
-		
-		var currentPosition = rover.move(movements);
+			var rover = new Rover(new Point(1, 2), Direction.NORTH);
+			var movements = ['B'];
+			
+			var currentPosition = rover.move(movements);
 
-		expect(currentPosition.getX()).toBe(1);
-		expect(currentPosition.getY()).toBe(1);
+			expect(currentPosition.getX()).toBe(1);
+			expect(currentPosition.getY()).toBe(1);
 		});
 
 		it("facing south", function(){
@@ -113,5 +113,17 @@ describe("Mars Rover", function(){
 			expect(currentPosition.getY()).toBe(1);
 		});
 
+	});
+
+	describe("turns left", function(){
+		
+		it("facing north", function(){
+			var rover = new Rover(new Point(1, 2), Direction.NORTH);
+			var movements = ['L'];
+			
+			rover.move(movements);
+
+			expect(rover.direction).toBe(Direction.WEST);
+		});
 	});
 });
