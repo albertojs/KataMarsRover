@@ -1,8 +1,8 @@
 function CommandFactory(command, direction, point)
 {
-	if(command == Movements.FORWARD)
+	if(command == Commands.FORWARD)
 		return new ForwardCommand(direction, point);
-	if(command == Movements.BACKWARD)
+	if(command == Commands.BACKWARD)
 		return new BackwardCommand(direction, point);
 }
 
@@ -43,3 +43,8 @@ function BackwardCommand(direction, point)
 		}	
 	}
 }
+
+var Commands = {
+	FORWARD: 'F',
+	BACKWARD: 'B'
+};
