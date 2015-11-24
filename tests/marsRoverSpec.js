@@ -13,7 +13,7 @@ describe("Mars Rover", function(){
 		it("facing north", function(){
 		var rover = new Rover(new Point(1, 2), Direction.NORTH);
 		var movements = ['F'];
-		
+
 		var currentPosition = rover.move(movements);
 
 		expect(currentPosition.getX()).toBe(1);
