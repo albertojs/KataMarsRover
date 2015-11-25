@@ -180,7 +180,7 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getDirection()).toBe(Direction.NORTH);
+			expect(currentPosition.getDirection()).toBe(Direction.SOUTH);
 		});
 
 		it("facing south", function(){
@@ -190,6 +190,15 @@ describe("Mars Rover", function(){
 			var currentPosition = rover.move(movements);
 
 			expect(currentPosition.getDirection()).toBe(Direction.WEST);
+		});
+
+		it("facing west", function(){
+			var rover = new Rover(new Point(1, 2), Direction.WEST);
+			var movements = ['R'];
+			
+			var currentPosition = rover.move(movements);
+
+			expect(currentPosition.getDirection()).toBe(Direction.NORTH);
 		});
 	});
 });

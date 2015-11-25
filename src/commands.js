@@ -75,10 +75,13 @@ function RightCommand(direction, point)
 			return new Position(point, Direction.EAST);
 		}
 		if(direction == Direction.EAST) {
-			return new Position(point, Direction.NORTH);
+			return new Position(point, Direction.SOUTH);
 		}
 		if(direction == Direction.SOUTH) {
 			return new Position(point, Direction.WEST);
+		}
+		if(direction == Direction.WEST) {
+			return new Position(point, Direction.NORTH);
 		}
 	}
 }
