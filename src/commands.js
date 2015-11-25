@@ -6,6 +6,8 @@ function CommandFactory(command, position)
 		return new BackwardCommand(position.getDirection(), position.getPoint());
 	if(command == Commands.LEFT)
 		return new LeftCommand(position.getDirection(), position.getPoint());
+	if(command == Commands.RIGHT)
+		return new RightCommand(position.getDirection(), position.getPoint());
 }
 
 function ForwardCommand(direction, point)
@@ -65,8 +67,19 @@ function LeftCommand(direction, point)
 	}
 }
 
+function RightCommand(direction, point)
+{
+	this.execute = function()
+	{
+		if(direction == Direction.NORTH) {
+			return new Position(point, Direction.EAST);
+		}
+	}
+}
+
 var Commands = {
 	FORWARD: 'F',
 	BACKWARD: 'B',
-	LEFT: 'L'
+	LEFT: 'L',
+	RIGHT: 'R'
 };
