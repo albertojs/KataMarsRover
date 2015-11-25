@@ -54,7 +54,7 @@ function LeftCommand(direction, point)
 			return new Position(point, Direction.WEST);
 		}
 		if(direction == Direction.SOUTH) {
-			return new Position(point, Direction).EAST;
+			return new Position(point, Direction.EAST);
 		}
 		if(direction == Direction.EAST) {
 			return new Position(point, Direction.NORTH);
