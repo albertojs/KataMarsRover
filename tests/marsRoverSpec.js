@@ -3,9 +3,9 @@ describe("Mars Rover", function(){
 	it("gets direction", function(){
 		var rover = new Rover(new Point(1, 2), Direction.SOUTH);
 
-		var direction = rover.direction;
+		var currentPosition = rover.currentPosition;
 
-		expect(direction).toBe('S');
+		expect(currentPosition.getDirection()).toBe('S');
 	});
 
 	describe("moves forward", function(){
@@ -16,8 +16,8 @@ describe("Mars Rover", function(){
 
 		var currentPosition = rover.move(movements);
 
-		expect(currentPosition.getX()).toBe(1);
-		expect(currentPosition.getY()).toBe(3);
+		expect(currentPosition.getXCoordinate()).toBe(1);
+		expect(currentPosition.getYCoordinate()).toBe(3);
 		});
 
 		it("facing south", function(){
@@ -26,8 +26,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(1);
-			expect(currentPosition.getY()).toBe(1);
+			expect(currentPosition.getXCoordinate()).toBe(1);
+			expect(currentPosition.getYCoordinate()).toBe(1);
 		});
 
 		it("facing east", function(){
@@ -36,8 +36,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(2);
-			expect(currentPosition.getY()).toBe(2);
+			expect(currentPosition.getXCoordinate()).toBe(2);
+			expect(currentPosition.getYCoordinate()).toBe(2);
 		});
 
 		it("facing west", function(){
@@ -46,8 +46,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(3);
-			expect(currentPosition.getY()).toBe(2);
+			expect(currentPosition.getXCoordinate()).toBe(3);
+			expect(currentPosition.getYCoordinate()).toBe(2);
 		});
 
 		it("twice", function(){
@@ -56,8 +56,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(4);
-			expect(currentPosition.getY()).toBe(4);
+			expect(currentPosition.getXCoordinate()).toBe(4);
+			expect(currentPosition.getYCoordinate()).toBe(4);
 		});
 	});
 
@@ -66,11 +66,11 @@ describe("Mars Rover", function(){
 		it("facing north", function(){
 			var rover = new Rover(new Point(1, 2), Direction.NORTH);
 			var movements = ['B'];
-			
+		
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(1);
-			expect(currentPosition.getY()).toBe(1);
+			expect(currentPosition.getXCoordinate()).toBe(1);
+			expect(currentPosition.getYCoordinate()).toBe(1);
 		});
 
 		it("facing south", function(){
@@ -79,8 +79,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(1);
-			expect(currentPosition.getY()).toBe(3);
+			expect(currentPosition.getXCoordinate()).toBe(1);
+			expect(currentPosition.getYCoordinate()).toBe(3);
 		});
 
 		it("facing east", function(){
@@ -89,8 +89,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(2);
-			expect(currentPosition.getY()).toBe(3);
+			expect(currentPosition.getXCoordinate()).toBe(2);
+			expect(currentPosition.getYCoordinate()).toBe(3);
 		});
 
 		it("facing west", function(){
@@ -99,8 +99,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(4);
-			expect(currentPosition.getY()).toBe(3);
+			expect(currentPosition.getXCoordinate()).toBe(4);
+			expect(currentPosition.getYCoordinate()).toBe(3);
 		});
 
 		it("twice", function(){
@@ -109,8 +109,8 @@ describe("Mars Rover", function(){
 			
 			var currentPosition = rover.move(movements);
 
-			expect(currentPosition.getX()).toBe(3);
-			expect(currentPosition.getY()).toBe(1);
+			expect(currentPosition.getXCoordinate()).toBe(3);
+			expect(currentPosition.getYCoordinate()).toBe(1);
 		});
 
 	});
@@ -121,9 +121,9 @@ describe("Mars Rover", function(){
 			var rover = new Rover(new Point(1, 2), Direction.NORTH);
 			var movements = ['L'];
 			
-			rover.move(movements);
+			var currentPosition = rover.move(movements);
 
-			expect(rover.direction).toBe(Direction.WEST);
+			expect(currentPosition.getDirection()).toBe(Direction.WEST);
 		});
 	});
 });

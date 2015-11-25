@@ -1,18 +1,16 @@
 function Rover(startingPoint, startingDirection)
 {
-	var self = this;
+	var self = this;	
 
-	self.point = startingPoint;
-	
-	self.direction = startingDirection;
+	self.currentPosition = new Position(startingPoint, startingDirection)
 	
 	self.move = function(commands)
 	{
 		for(i = 0; i < commands.length; i++){
 			var currentCommand = commands[i];
-			var command = CommandFactory(currentCommand, self.direction, self.point)
-			self.point = command.execute();
+			var command = CommandFactory(currentCommand, self.currentPosition);
+			self.currentPosition = command.execute();
 		}
-		return self.point;
+		return self.currentPosition;
 	};
 }
