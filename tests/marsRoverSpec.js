@@ -152,5 +152,14 @@ describe("Mars Rover", function(){
 
 			expect(currentPosition.getDirection()).toBe(Direction.NORTH);
 		});
+
+		it("twice facing east", function(){
+			var rover = new Rover(new Point(1, 2), Direction.EAST);
+			var movements = ['L','L'];
+			
+			var currentPosition = rover.move(movements);
+
+			expect(currentPosition.getDirection()).toBe(Direction.WEST);
+		});
 	});
 });
