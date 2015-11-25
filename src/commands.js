@@ -74,6 +74,9 @@ function RightCommand(direction, point)
 		if(direction == Direction.NORTH) {
 			return new Position(point, Direction.EAST);
 		}
+		if(direction == Direction.EAST) {
+			return new Position(point, Direction.NORTH);
+		}
 	}
 }
 
