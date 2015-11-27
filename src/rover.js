@@ -1,8 +1,8 @@
-function Rover(startingPoint, startingDirection)
+function Rover(position)
 {
 	var self = this;	
 
-	self.currentPosition = new Position(startingPoint, startingDirection)
+	self.currentPosition = position;
 	
 	self.move = function(commands)
 	{
