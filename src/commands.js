@@ -1,87 +1,87 @@
 function CommandFactory(command, position)
 {
 	if(command == Commands.FORWARD)
-		return new ForwardCommand(position.getDirection(), position.getPoint());
+		return new ForwardCommand(position);
 	if(command == Commands.BACKWARD)
-		return new BackwardCommand(position.getDirection(), position.getPoint());
+		return new BackwardCommand(position);
 	if(command == Commands.LEFT)
-		return new LeftCommand(position.getDirection(), position.getPoint());
+		return new LeftCommand(position);
 	if(command == Commands.RIGHT)
-		return new RightCommand(position.getDirection(), position.getPoint());
+		return new RightCommand(position);
 }
 
-function ForwardCommand(direction, point)
+function ForwardCommand(position)
 {
 	this.execute = function()
 	{
-		if(direction == Direction.NORTH) {
-			return new Position(new Point(point.getX(), point.getY() + 1), direction);
+		if(position.getDirection() == Direction.NORTH) {
+			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() + 1), position.getDirection());
 		}
-		if(direction == Direction.SOUTH) {
-			return new Position(new Point(point.getX(), point.getY() - 1), direction);
+		if(position.getDirection() == Direction.SOUTH) {
+			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() - 1), position.getDirection());
 		}
-		if(direction == Direction.EAST) {
-			return new Position(new Point(point.getX() + 1, point.getY()), direction);
+		if(position.getDirection() == Direction.EAST) {
+			return new Position(new Point(position.getXCoordinate() + 1, position.getYCoordinate()), position.getDirection());
 		}
-		if(direction == Direction.WEST) {
-			return new Position(new Point(point.getX() - 1, point.getY()), direction);
+		if(position.getDirection() == Direction.WEST) {
+			return new Position(new Point(position.getXCoordinate() - 1, position.getYCoordinate()), position.getDirection());
 		}
 	};
 }
 
-function BackwardCommand(direction, point)
+function BackwardCommand(position)
 {
 	this.execute = function()
 	{
-		if(direction == Direction.NORTH) {
-			return new Position(new Point(point.getX(), point.getY() - 1), direction);
+		if(position.getDirection() == Direction.NORTH) {
+			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() - 1), position.getDirection());
 		}
-		if(direction == Direction.SOUTH) {
-			return new Position(new Point(point.getX(), point.getY() + 1), direction);
+		if(position.getDirection() == Direction.SOUTH) {
+			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() + 1), position.getDirection());
 		}
-		if(direction == Direction.EAST) {
-			return new Position(new Point(point.getX() - 1, point.getY()), direction);
+		if(position.getDirection() == Direction.EAST) {
+			return new Position(new Point(position.getXCoordinate() - 1, position.getYCoordinate()), position.getDirection());
 		}
-		if(direction == Direction.WEST) {
-			return new Position(new Point(point.getX() + 1, point.getY()), direction);
+		if(position.getDirection() == Direction.WEST) {
+			return new Position(new Point(position.getXCoordinate() + 1, position.getYCoordinate()), position.getDirection());
 		}	
 	}
 }
 
-function LeftCommand(direction, point)
+function LeftCommand(position)
 {
 	this.execute = function()
 	{
-		if(direction == Direction.NORTH) {
-			return new Position(point, Direction.WEST);
+		if(position.getDirection() == Direction.NORTH) {
+			return new Position(position.getPoint(), Direction.WEST);
 		}
-		if(direction == Direction.SOUTH) {
-			return new Position(point, Direction.EAST);
+		if(position.getDirection() == Direction.SOUTH) {
+			return new Position(position.getPoint(), Direction.EAST);
 		}
-		if(direction == Direction.EAST) {
-			return new Position(point, Direction.NORTH);
+		if(position.getDirection() == Direction.EAST) {
+			return new Position(position.getPoint(), Direction.NORTH);
 		}
-		if(direction == Direction.WEST) {
-			return new Position(point, Direction.SOUTH);
+		if(position.getDirection() == Direction.WEST) {
+			return new Position(position.getPoint(), Direction.SOUTH);
 		}
 	}
 }
 
-function RightCommand(direction, point)
+function RightCommand(position)
 {
 	this.execute = function()
 	{
-		if(direction == Direction.NORTH) {
-			return new Position(point, Direction.EAST);
+		if(position.getDirection() == Direction.NORTH) {
+			return new Position(position.getPoint(), Direction.EAST);
 		}
-		if(direction == Direction.EAST) {
-			return new Position(point, Direction.SOUTH);
+		if(position.getDirection() == Direction.EAST) {
+			return new Position(position.getPoint(), Direction.SOUTH);
 		}
-		if(direction == Direction.SOUTH) {
-			return new Position(point, Direction.WEST);
+		if(position.getDirection() == Direction.SOUTH) {
+			return new Position(position.getPoint(), Direction.WEST);
 		}
-		if(direction == Direction.WEST) {
-			return new Position(point, Direction.NORTH);
+		if(position.getDirection() == Direction.WEST) {
+			return new Position(position.getPoint(), Direction.NORTH);
 		}
 	}
 }
