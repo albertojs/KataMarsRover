@@ -56,4 +56,11 @@ describe("Grid", function(){
 		expect(nextPoint.getX()).toBe(0);
 		expect(nextPoint.getY()).toBe(3);
 	});
+
+	it("generates next west point", function(){
+		var nextPoint = grid.nextWestPoint(new Point(2, 3));
+
+		expect(nextPoint.getX()).toBe(1);
+		expect(nextPoint.getY()).toBe(3);
+	});
 });
