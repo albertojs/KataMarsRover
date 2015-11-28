@@ -42,4 +42,11 @@ describe("Grid", function(){
 		expect(nextPoint.getX()).toBe(2);
 		expect(nextPoint.getY()).toBe(4);
 	});
+
+	it("generates next east point", function(){
+		var nextPoint = grid.nextEastPoint(new Point(2, 3));
+
+		expect(nextPoint.getX()).toBe(3);
+		expect(nextPoint.getY()).toBe(3);
+	});
 });
