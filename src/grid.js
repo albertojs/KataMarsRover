@@ -29,6 +29,8 @@ function Grid(width, height)
 
 	this.nextWestPoint = function(point)
 	{
-		return new Point(point.getX() - 1, point.getY());
+		if(point.getX() > 0)
+			return new Point(point.getX() - 1, point.getY());
+		return new Point(width, point.getY());
 	};
 }

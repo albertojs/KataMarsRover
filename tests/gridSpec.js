@@ -63,4 +63,11 @@ describe("Grid", function(){
 		expect(nextPoint.getX()).toBe(1);
 		expect(nextPoint.getY()).toBe(3);
 	});
+
+	it("generates next west point wrapping from one edge to another", function(){
+		var nextPoint = grid.nextWestPoint(new Point(0, 3));
+
+		expect(nextPoint.getX()).toBe(gridWidth);
+		expect(nextPoint.getY()).toBe(3);
+	});
 });
