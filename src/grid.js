@@ -12,4 +12,11 @@ function Grid(width, height)
 			return new Point(point.getX(), point.getY() + 1);
 		return new Point(point.getX(), 0);
 	};
+
+	this.nextSouthPoint = function(point)
+	{
+		
+			return new Point(point.getX(), point.getY() - 1);
+		
+	};
 }

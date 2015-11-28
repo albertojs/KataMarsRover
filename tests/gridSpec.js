@@ -26,4 +26,11 @@ describe("Grid", function(){
 		expect(nextPoint.getX()).toBe(2);
 		expect(nextPoint.getY()).toBe(0);
 	});
+
+	it("generates next south point", function(){
+		var nextPoint = grid.nextSouthPoint(new Point(2, 3));
+
+		expect(nextPoint.getX()).toBe(2);
+		expect(nextPoint.getY()).toBe(2);
+	});
 });
