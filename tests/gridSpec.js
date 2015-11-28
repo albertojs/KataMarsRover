@@ -1,7 +1,9 @@
 describe("Grid", function(){
-	var grid;
+	var grid, gridWidth, gridHeight;
 	beforeEach(function(){
-		grid = new Grid(5, 4);
+		gridWidth = 5;
+		gridHeight = 4;
+		grid = new Grid(gridWidth, gridHeight);
 	});
 
 	it("throws exception when a point is out of the grid", function(){
@@ -32,5 +34,12 @@ describe("Grid", function(){
 
 		expect(nextPoint.getX()).toBe(2);
 		expect(nextPoint.getY()).toBe(2);
+	});
+
+	it("generates next south point wrapping from one edge to another", function(){
+		var nextPoint = grid.nextSouthPoint(new Point(2, 0));
+
+		expect(nextPoint.getX()).toBe(2);
+		expect(nextPoint.getY()).toBe(4);
 	});
 });
