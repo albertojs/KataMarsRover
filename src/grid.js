@@ -8,6 +8,8 @@ function Grid(width, height)
 
 	this.nextNorthPoint = function(point)
 	{
-		return new Point(point.getX(), point.getY() + 1);
+		if(point.getY() < height)
+			return new Point(point.getX(), point.getY() + 1);
+		return new Point(point.getX(), 0);
 	};
 }

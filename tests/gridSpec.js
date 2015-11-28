@@ -19,4 +19,11 @@ describe("Grid", function(){
 		expect(nextPoint.getX()).toBe(2);
 		expect(nextPoint.getY()).toBe(4);
 	});
+
+	it("generates next north point wrapping from one edge to another", function(){
+		var nextPoint = grid.nextNorthPoint(new Point(2, 4));
+
+		expect(nextPoint.getX()).toBe(2);
+		expect(nextPoint.getY()).toBe(0);
+	});
 });
