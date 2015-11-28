@@ -22,6 +22,8 @@ function Grid(width, height)
 
 	this.nextEastPoint = function(point)
 	{
-		return new Point(point.getX() + 1, point.getY());
+		if(point.getX() < width)
+			return new Point(point.getX() + 1, point.getY());
+		return new Point(0, point.getY());
 	};
 }

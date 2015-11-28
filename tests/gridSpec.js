@@ -49,4 +49,11 @@ describe("Grid", function(){
 		expect(nextPoint.getX()).toBe(3);
 		expect(nextPoint.getY()).toBe(3);
 	});
+
+	it("generates next east point wrapping from one edge to another", function(){
+		var nextPoint = grid.nextEastPoint(new Point(5, 3));
+
+		expect(nextPoint.getX()).toBe(0);
+		expect(nextPoint.getY()).toBe(3);
+	});
 });
