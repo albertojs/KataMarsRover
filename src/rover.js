@@ -3,7 +3,8 @@ function Rover(position, grid)
 	var self = this;	
 
 	self.currentPosition = position;
-	//grid.validatePoint(position.getPoint());
+	
+	grid.validatePoint(position.getPoint());
 
 	self.move = function(commands)
 	{
