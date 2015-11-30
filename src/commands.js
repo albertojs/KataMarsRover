@@ -1,49 +1,49 @@
-function CommandFactory(command, position)
+function CommandFactory(command, position, grid)
 {
 	if(command == Commands.FORWARD)
-		return new ForwardCommand(position);
+		return new ForwardCommand(position, grid);
 	if(command == Commands.BACKWARD)
-		return new BackwardCommand(position);
+		return new BackwardCommand(position, grid);
 	if(command == Commands.LEFT)
-		return new LeftCommand(position);
+		return new LeftCommand(position, grid);
 	if(command == Commands.RIGHT)
-		return new RightCommand(position);
+		return new RightCommand(position, grid);
 }
 
-function ForwardCommand(position)
+function ForwardCommand(position, grid)
 {
 	this.execute = function()
 	{
 		if(position.getDirection() == Direction.NORTH) {
-			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() + 1), position.getDirection());
+			return new Position(grid.nextNorthPoint(position.getPoint()), position.getDirection());
 		}
 		if(position.getDirection() == Direction.SOUTH) {
-			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() - 1), position.getDirection());
+			return new Position(grid.nextSouthPoint(position.getPoint()), position.getDirection());
 		}
 		if(position.getDirection() == Direction.EAST) {
-			return new Position(new Point(position.getXCoordinate() + 1, position.getYCoordinate()), position.getDirection());
+			return new Position(grid.nextEastPoint(position.getPoint()), position.getDirection());
 		}
 		if(position.getDirection() == Direction.WEST) {
-			return new Position(new Point(position.getXCoordinate() - 1, position.getYCoordinate()), position.getDirection());
+			return new Position(grid.nextWestPoint(position.getPoint()), position.getDirection());
 		}
 	};
 }
 
-function BackwardCommand(position)
+function BackwardCommand(position, grid)
 {
 	this.execute = function()
 	{
 		if(position.getDirection() == Direction.NORTH) {
-			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() - 1), position.getDirection());
+			return new Position(grid.nextSouthPoint(position.getPoint()), position.getDirection());
 		}
 		if(position.getDirection() == Direction.SOUTH) {
-			return new Position(new Point(position.getXCoordinate(), position.getYCoordinate() + 1), position.getDirection());
+			return new Position(grid.nextNorthPoint(position.getPoint()), position.getDirection());
 		}
 		if(position.getDirection() == Direction.EAST) {
-			return new Position(new Point(position.getXCoordinate() - 1, position.getYCoordinate()), position.getDirection());
+			return new Position(grid.nextWestPoint(position.getPoint()), position.getDirection());
 		}
 		if(position.getDirection() == Direction.WEST) {
-			return new Position(new Point(position.getXCoordinate() + 1, position.getYCoordinate()), position.getDirection());
+			return new Position(grid.nextEastPoint(position.getPoint()), position.getDirection());
 		}	
 	}
 }
